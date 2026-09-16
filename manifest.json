@@ -1,0 +1,11 @@
+{
+  "name": "拾知 - 运营岗位资质题库",
+  "short_name": "拾知",
+  "description": "运营岗位资质题库刷题平台",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fafafa",
+  "theme_color": "#d4a574",
+  "icons": []
+}
