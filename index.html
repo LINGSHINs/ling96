@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>拾知 - 运营岗位资质题库</title>
+<meta name="description" content="拾知 - 高效刷题学习平台">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d4a574">
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+<!-- Top Bar -->
+<header id="topbar">
+  <div class="topbar-left">
+    <button id="btn-home" class="topbar-btn" title="首页">拾知</button>
+  </div>
+  <div class="topbar-center">
+    <span id="mode-title" class="mode-title"></span>
+  </div>
+  <div class="topbar-right">
+    <button id="btn-settings" class="topbar-btn icon-btn" title="设置">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm6 4c0-.7-.1-1.4-.3-2l2.1-1.5-2-3.5-2.4 1c-1-.9-2.3-1.6-3.7-1.9L11 0H9L8.3 2.4c-1.4.3-2.7 1-3.7 1.9l-2.4-1-2 3.5L2.3 10c-.2.6-.3 1.3-.3 2s.1 1.4.3 2L.2 15.5l2 3.5 2.4-1c1 .9 2.3 1.6 3.7 1.9L9 22h2l.7-2.4c1.4-.3 2.7-1 3.7-1.9l2.4 1 2-3.5-2.1-1.5c.2-.6.3-1.3.3-2z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- View: Dashboard -->
+<section id="view-dashboard" class="view active">
+  <div class="dashboard-hero">
+    <h1 class="hero-title">拾知</h1>
+    <p class="hero-subtitle">运营岗位资质题库 · 共2957题</p>
+  </div>
+  <div class="dashboard-stats" id="dash-stats">
+    <!-- Filled by JS -->
+  </div>
+  <div class="dashboard-progress" id="dash-progress">
+    <!-- Filled by JS -->
+  </div>
+  <div class="mode-grid" id="mode-grid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Mode Config -->
+<section id="view-config" class="view">
+  <div class="config-container" id="config-container">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Quiz -->
+<section id="view-quiz" class="view">
+  <div class="quiz-header">
+    <button id="quiz-exit" class="topbar-btn">退出</button>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+    </div>
+    <div class="quiz-counter">
+      <span id="quiz-current">1</span>/<span id="quiz-total">10</span>
+    </div>
+  </div>
+  <div class="quiz-body" id="quiz-body">
+    <!-- Filled by JS -->
+  </div>
+  <div class="quiz-footer" id="quiz-footer">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Answer Card (选题模式) -->
+<section id="view-card" class="view">
+  <div class="card-header">
+    <button id="card-exit" class="topbar-btn">返回</button>
+    <span class="card-title" id="card-title">答题卡</span>
+  </div>
+  <div class="card-filters" id="card-filters"></div>
+  <div class="card-grid" id="card-grid"></div>
+</section>
+
+<!-- View: Memorize (背题模式) -->
+<section id="view-memorize" class="view">
+  <div class="quiz-header">
+    <button id="mem-exit" class="topbar-btn">退出</button>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="mem-progress-fill"></div>
+    </div>
+    <div class="quiz-counter">
+      <span id="mem-current">1</span>/<span id="mem-total">10</span>
+    </div>
+  </div>
+  <div class="memorize-body" id="memorize-body">
+    <!-- Filled by JS -->
+  </div>
+  <div class="memorize-footer">
+    <button id="mem-prev" class="action-btn">上一题</button>
+    <button id="mem-flip" class="action-btn primary">显示答案</button>
+    <button id="mem-next" class="action-btn">下一题</button>
+  </div>
+</section>
+
+<!-- View: Flashcards (闪卡) -->
+<section id="view-flashcard" class="view">
+  <div class="quiz-header">
+    <button id="fc-exit" class="topbar-btn">退出</button>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="fc-progress-fill"></div>
+    </div>
+    <div class="quiz-counter">
+      <span id="fc-current">1</span>/<span id="fc-total">10</span>
+    </div>
+  </div>
+  <div class="flashcard-stage" id="flashcard-stage">
+    <!-- Filled by JS -->
+  </div>
+  <div class="flashcard-controls">
+    <button id="fc-prev" class="action-btn">上一个</button>
+    <button id="fc-flip" class="action-btn primary">翻转</button>
+    <button id="fc-next" class="action-btn">下一个</button>
+  </div>
+</section>
+
+<!-- View: Game Mode (游戏记忆) -->
+<section id="view-game" class="view">
+  <div class="quiz-header">
+    <button id="game-exit" class="topbar-btn">退出</button>
+    <span class="game-score">得分: <span id="game-score-val">0</span></span>
+    <span class="game-timer">时间: <span id="game-timer-val">60</span>s</span>
+  </div>
+  <div class="game-body" id="game-body">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Wrong Questions (错题集) -->
+<section id="view-wrong" class="view">
+  <div class="section-header">
+    <button id="wrong-exit" class="topbar-btn">返回</button>
+    <span class="section-title">错题集</span>
+    <button id="wrong-clear" class="action-btn small danger">清空</button>
+  </div>
+  <div class="wrong-summary" id="wrong-summary"></div>
+  <div class="wrong-list" id="wrong-list"></div>
+</section>
+
+<!-- View: Stats (统计) -->
+<section id="view-stats" class="view">
+  <div class="section-header">
+    <button id="stats-exit" class="topbar-btn">返回</button>
+    <span class="section-title">学习统计</span>
+  </div>
+  <div class="stats-container" id="stats-container">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Settings -->
+<section id="view-settings" class="view">
+  <div class="section-header">
+    <button id="settings-exit" class="topbar-btn">返回</button>
+    <span class="section-title">设置</span>
+  </div>
+  <div class="settings-container" id="settings-container">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- View: Theme Customizer -->
+<section id="view-themes" class="view">
+  <div class="section-header">
+    <button id="themes-exit" class="topbar-btn">返回</button>
+    <span class="section-title">皮肤定制</span>
+  </div>
+  <div class="theme-customizer" id="theme-customizer">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- Loading overlay -->
+<div id="loading-overlay" class="loading-overlay">
+  <div class="loading-spinner"></div>
+  <p class="loading-text">加载题库中...</p>
+</div>
+
+</div>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>
